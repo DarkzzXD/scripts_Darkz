@@ -1,5 +1,5 @@
 -- THIS ORION LIBRARY IS MODIFIED, ORIGINAL ONE IS shlexware/Orion         (https://raw.githubusercontent.com/shlexware/Orion/main/source) < For the source
-
+print("Orion Library | Executando... - Modificado")
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
