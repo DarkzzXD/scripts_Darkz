@@ -1,7 +1,9 @@
+print("[ Scripts do Darkz ] - Executando...")
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Scripts do Darkz - v1", HidePremium = false, SaveConfig = false, ConfigFolder = "Config"})
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character
+
 -- Raise a Floppa 1
 local TabRAF1 = Window:MakeTab({
 	Name = "Raise a Floppa 1",
@@ -17,7 +19,21 @@ local TabRAF1Floppa = TabRAF1:AddSection({
 	Name = "Floppa"
 })
 
-
+TabRAF1Floppa:AddButton({
+	Name = "Colher Dinheiro",
+	Callback = function()
+    local OriginalCFrame = Character:WaitForChild("HumanoidRootPart").CFrame
+		for i, Cash in workspace:GetChildren() do
+			if Cash.Name == "Money" or Cash.Name == "Money Bag" then
+				pcall(function()
+					Character:WaitForChild("HumanoidRootPart").CFrame = Cash.CFrame
+                    task.wait(0.1)
+            	end)
+			end
+		end
+         Character:WaitForChild("HumanoidRootPart").CFrame = OriginalCFrame
+      end    
+})
 
 TabRAF1Floppa:AddButton({
 	Name = "Pet Floppa",
@@ -56,7 +72,7 @@ TabRAF1Backrooms:AddButton({
 })
 
 
-
+-- Raise a Floppa 2
 
 local TabRAF2 = Window:MakeTab({
 	Name = "Raise a Floppa 2",
@@ -72,6 +88,21 @@ local TabRAF2Floppa = TabRAF2:AddSection({
 	Name = "Floppa"
 })
 
+TabRAF2Floppa:AddButton({
+	Name = "Colher Dinheiro",
+	Callback = function()
+    local OriginalCFrame = Character:WaitForChild("HumanoidRootPart").CFrame
+		for i, Cash in workspace:GetChildren() do
+			if Cash.Name == "Money" or Cash.Name == "Money Bag" then
+				pcall(function()
+					Character:WaitForChild("HumanoidRootPart").CFrame = Cash.CFrame
+                    task.wait(0.1)
+            	end)
+			end
+		end
+         Character:WaitForChild("HumanoidRootPart").CFrame = OriginalCFrame
+      end    
+})
 
 TabRAF2Floppa:AddButton({
 	Name = "Pet Floppa",
