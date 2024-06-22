@@ -4,7 +4,7 @@ end
 
 osprint("Executando...")
 
--- Global Values
+-- Global Values -- Dont change/Não mude
 _G.RaiseAFloppaAutoClickFloppa = false
 _G.canCheckAutoClickFloppa = true
 
@@ -33,6 +33,16 @@ local TabRAF = Window:MakeTab({
 	PremiumOnly = false
 })
 
+local TabSC = Window:MakeTab({
+	Name = "Sanic Chase",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TabSCG = TabSC:AddSection({
+	Name = "Modos de Jogo"
+})
+
 local TabRAFBackrooms = TabRAF:AddSection({
 	Name = "Backrooms"
 })
@@ -55,8 +65,8 @@ local TabEtcUI = TabEtc:AddSection({
 	Name = "Script"
 })
 
-local TabEtcDebug = TabEtc:AddSection({
-	Name = "Debug"
+local TabEtcPlayer = TabEtc:AddSection({
+	Name = "Personagem"
 })
 
 local Player = game:GetService("Players").LocalPlayer
@@ -172,16 +182,58 @@ OrionLib:MakeNotification({
       end    
 })
 
-TabEtcDebug:AddButton({
-	Name = "Copiar Posição do Personagem",
+TabSCG:AddLabel("Sanic Infection")
+
+TabSCG:AddButton({
+	Name = "Virar Sanic Amarelo | Sanic Infection",
 	Callback = function()
-        setclipboard(Character.HumanoidRootPart.Position)
-	OrionLib:MakeNotification({
-		Name = "Notificação",
-		Content = "Copiado a posição do personagem com sucesso.",
-		Image = "rbxassetid://4483345998",
-		Time = 5
-	})
+		Character.HumanoidRootPart.CFrame = CFrame.new(-48.26789093017578, 104.34778594970703, 658.488525390625)
+  	end    
+})
+
+TabSCG:AddButton({
+	Name = "Resgatar Pontos | Sanic Infection",
+	Callback = function()
+        local hrp = Character.HumanoidRootPart or Character.Torso or Character.UpperTorso
+		hrp.CFrame = CFrame.new(21.13048553466797, 91.03083801269531, 556.1837768554688)
+		keypress(Enum.KeyCode.E)
+		task.wait(4)
+		keyrelease(Enum.KeyCode.E)
+  	end    
+})
+
+TabSCG:AddLabel("Sanic Minigame")
+
+TabSCG:AddButton({
+	Name = "Revelar onde esta Sanic | Sanic Minigame",
+	Callback = function()
+       for i, PlayerV in game:GetService("Players"):GetPlayers() do
+        if PlayerV.Team == game:GetService("Teams").Sanic then
+            OrionLib:MakeNotification({
+	Name = "Notificação",
+	Content = "O Sanic é: " .. PlayerV.Name .. "!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+          PlayerV.Character.HumanoidRootPart.TheSwirlyHeadMan_Body.AlwaysOnTop = true
+         repeat task.wait() until PlayerV.Team ~= game:GetService("Teams").Sanic
+          PlayerV.Character.HumanoidRootPart.TheSwirlyHeadMan_Body.AlwaysOnTop = false
+         end
+end
+  	end    
+})
+
+TabSCG:AddButton({
+	Name = "Coletar Pontos | Sanic Minigame",
+	Callback = function()
+        Character.HumanoidRootPart.CFrame = CFrame.new(241.23609924316406, 2.939272165298462, -1.9747358560562134)
+Character.HumanoidRootPart.CFrame = CFrame.new(241.23609924316406, 2.939272165298462, -1.9747358560562134)
+Character.HumanoidRootPart.CFrame = CFrame.new(241.23609924316406, 2.939272165298462, -1.9747358560562134)
+Character.HumanoidRootPart.CFrame = CFrame.new(241.23609924316406, 2.939272165298462, -1.9747358560562134)        
+       task.wait(0.5)
+        keypress(Enum.KeyCode.E)
+        task.wait(1)
+        keyrelease(Enum.KeyCode.E)
   	end    
 })
 
@@ -193,6 +245,7 @@ TabEtcUI:AddButton({
   	end    
 })
 
+
 TabEtcAdmin:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
@@ -201,9 +254,74 @@ TabEtcAdmin:AddButton({
 })
 
 TabEtcUI:AddButton({
-	Name = "Destruir UI",
+	Name = "Parar Script",
 	Callback = function()
 		s_destroy()
+  	end    
+})
+
+TabEtcUI:AddButton({
+	Name = "Não irei algumas funções do Raise a Floppa (FPS)",
+	Callback = function()
+		OrionLib:MakeNotification({
+	    	Name = "Notificação",
+	    	Content = "O script irá previnir o check do AutoClick, talvez pode ajudar em FPS.",
+	    	Image = "rbxassetid://4483345998",
+	    	Time = 5
+	    })
+        _G.canCheckAutoClickFloppa = false
+  	end    
+})
+
+TabEtcPlayer:AddSlider({
+	Name = "Velocidade do Personagem",
+	Min = 0,
+	Max = 200,
+	Default = 16,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Velocidade",
+	Callback = function(Value)
+		Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
+	end    
+})
+
+TabEtcPlayer:AddSlider({
+	Name = "FOV Camera (Não testado)",
+	Min = 0,
+	Max = 120,
+	Default = 70,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "FOV",
+	Callback = function(Value)
+		workspace.CurrentCamera.FieldOfView = Value
+	end    
+})
+
+TabEtcPlayer:AddButton({
+	Name = "Resetar Personagem",
+	Callback = function()
+        Character:FindFirstChildOfClass("Humanoid"):TakeDamage(Character:FindFirstChildOfClass("Humanoid").Health)
+	OrionLib:MakeNotification({
+		Name = "Notificação",
+		Content = "Seu personagem deve ter morrido.",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+  	end    
+})
+
+TabEtcPlayer:AddButton({
+	Name = "Copiar Posição do Personagem",
+	Callback = function()
+        setclipboard(Character.HumanoidRootPart.Position)
+	OrionLib:MakeNotification({
+		Name = "Notificação",
+		Content = "Copiado a posição do personagem com sucesso.",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
   	end    
 })
 
