@@ -1,5 +1,5 @@
 print("[ Scripts do Darkz ] - Executando...")
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/DarkzzXD/scripts_Darkz/main/orionlibrary.lua")))()
 local Window = OrionLib:MakeWindow({Name = "Scripts do Darkz - v1", HidePremium = false, SaveConfig = false, ConfigFolder = "Config"})
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character
