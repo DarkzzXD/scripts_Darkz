@@ -73,38 +73,11 @@ TabRAFFloppa:AddToggle({
 TabRAFFloppa:AddButton({
 	Name = "Deletar Fezes",
 	Callback = function()
-  		for i, Poop in workspace:GetChildren() do
-			if Poop.Name == "Poop" and Poop:IsA("BasePart") then
+  		for i, Poop in workspace:GetDescendants() do
+			if Poop:IsA("BasePart") or Poop:IsA("Model") and Poop.Name == "Poop" then
 				Poop:Destroy()
 			end
 		end
-
-			-- Raise a Floppa 2 Support
-			if workspace:FindFirstChild("Key Parts") then -- Check for RAF2
-for i, Poop in workspace:GetChildren() do
-    if Poop.Name == "Poop" and Poop:IsA("Model") then
-        local aa = 0
-        for i, _ in Poop:GetChildren() do
-aa = i
-    end
-if aa >1 then 
-        Poop:Destroy()
-end
-    end
-end
-for i, Poop in workspace["Key Parts"]["Litter Box"]:GetChildren() do
-    if Poop.Name == "Poop" and Poop:IsA("Model") then
-        local aa = 0
-        for i, _ in Poop:GetChildren() do
-aa = i
-    end
-if aa >1 then 
-        Poop:Destroy()
-end
-    end
-end
-end
-			
       end    
 })
 
@@ -114,11 +87,13 @@ TabRAFFloppa:AddButton({
 
 local OriginalCFrame = Character:WaitForChild("HumanoidRootPart").CFrame
 		for i, Cash in workspace:GetChildren() do
+				task.spawn(function()
 			if Cash.Name == "Money" or Cash.Name == "Money Bag" then
 				pcall(function()
 					Cash.CFrame = Character.HumanoidRootPart.CFrame
                     Cash.CanCollide = false
                     task.wait()
+								end)
             	end)
 			end
 		end
@@ -155,11 +130,18 @@ TabRAFFloppa:AddButton({
       		Character.HumanoidRootPart.CFrame = workspace.Floppa.HumanoidRootPart.CFrame + Vector3.new(0,2,0)
   	end    
 })
-
+-- -12800.046875, 57.98476028442383, -16092.3515625
 TabRAFBackrooms:AddButton({
-	Name = "Abrir the_darkweb | Raise a Floppa 1",
+	Name = "Abrir the_darkwebs | Raise a Floppa 1",
 	Callback = function()
 		Player.PlayerGui["Backrooms Shop"].Frame.Visible = true
+      end    
+})
+
+TabRAFBackrooms:AddButton({
+	Name = "Teleportar para as Backrooms | Raise a Floppa 1",
+	Callback = function()
+		Character.HumanoidRootPart.CFrame = CFrame.new(-12800.046875, 57.98476028442383, -16092.3515625)
       end    
 })
 
