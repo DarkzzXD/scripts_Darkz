@@ -1,6 +1,7 @@
 function osprint(message)
 	warn("[ Scripts do Darkz ] - " .. message)
 end
+
 osprint("Executando...")
 
 -- Global Values
@@ -19,6 +20,12 @@ end)
 
 local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/DarkzzXD/scripts_Darkz/main/orionlibrary.lua")))()
 local Window = OrionLib:MakeWindow({Name = "Scripts do Darkz", HidePremium = false, SaveConfig = false, ConfigFolder = "Config"})
+
+function s_destroy()
+		_G.RaiseAFloppaAutoClickFloppa = false
+		_G.canCheckAutoClickFloppa = true
+      		OrionLib:Destroy()
+end
 
 local TabRAF = Window:MakeTab({
 	Name = "Raise a Floppa",
@@ -45,7 +52,7 @@ local TabEtcAdmin = TabEtc:AddSection({
 })
 
 local TabEtcUI = TabEtc:AddSection({
-	Name = "UI"
+	Name = "Script"
 })
 
 local TabEtcDebug = TabEtc:AddSection({
@@ -160,6 +167,20 @@ TabEtcDebug:AddButton({
 	Name = "Copiar Posição do Personagem",
 	Callback = function()
         setclipboard(Character.HumanoidRootPart.Position)
+	OrionLib:MakeNotification({
+		Name = "Notificação",
+		Content = "Copiado a posição do personagem com sucesso.",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+  	end    
+})
+
+TabEtcDebug:AddButton({
+	Name = "Reiniciar Script",
+	Callback = function()
+		s_destroy()
+       		loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkzzXD/scripts_Darkz/main/hub.lua"))()
   	end    
 })
 
@@ -173,9 +194,7 @@ TabEtcAdmin:AddButton({
 TabEtcUI:AddButton({
 	Name = "Destruir UI",
 	Callback = function()
-		_G.RaiseAFloppaAutoClickFloppa = false
-		_G.canCheckAutoClickFloppa = true
-      		OrionLib:Destroy()
+		s_destroy()
   	end    
 })
 
