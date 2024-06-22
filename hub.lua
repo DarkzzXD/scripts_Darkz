@@ -176,7 +176,7 @@ TabEtcDebug:AddButton({
   	end    
 })
 
-TabEtcDebug:AddButton({
+TabEtcUI:AddButton({
 	Name = "Reiniciar Script",
 	Callback = function()
 		s_destroy()
