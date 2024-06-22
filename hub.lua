@@ -71,13 +71,40 @@ TabRAFFloppa:AddToggle({
 })
 
 TabRAFFloppa:AddButton({
-	Name = "Deletar Fezes | Raise a Floppa 1",
+	Name = "Deletar Fezes",
 	Callback = function()
   		for i, Poop in workspace:GetChildren() do
 			if Poop.Name == "Poop" and Poop:IsA("BasePart") then
 				Poop:Destroy()
 			end
 		end
+
+			-- Raise a Floppa 2 Support
+			if workspace:FindFirstChild("Key Parts") then -- Check for RAF2
+for i, Poop in workspace:GetChildren() do
+    if Poop.Name == "Poop" and Poop:IsA("Model") then
+        local aa = 0
+        for i, _ in Poop:GetChildren() do
+aa = i
+    end
+if aa >1 then 
+        Poop:Destroy()
+end
+    end
+end
+for i, Poop in workspace["Key Parts"]["Litter Box"]:GetChildren() do
+    if Poop.Name == "Poop" and Poop:IsA("Model") then
+        local aa = 0
+        for i, _ in Poop:GetChildren() do
+aa = i
+    end
+if aa >1 then 
+        Poop:Destroy()
+end
+    end
+end
+end
+			
       end    
 })
 
