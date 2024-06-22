@@ -74,8 +74,10 @@ TabRAFFloppa:AddButton({
 	Name = "Deletar Fezes",
 	Callback = function()
   		for i, Poop in workspace:GetDescendants() do
-			if Poop:IsA("BasePart") or Poop:IsA("Model") and Poop.Name == "Poop" then
-				Poop:Destroy()
+			if Poop:IsA("Model") or Poop:IsA("BasePart") then
+				if Poop.Name == "Poop" then
+					Poop:Destroy()
+				end
 			end
 		end
       end    
