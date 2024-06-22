@@ -87,7 +87,6 @@ TabRAFFloppa:AddButton({
 
 local OriginalCFrame = Character:WaitForChild("HumanoidRootPart").CFrame
 		for i, Cash in workspace:GetChildren() do
-				task.spawn(function()
 			if Cash.Name == "Money" or Cash.Name == "Money Bag" then
 				pcall(function()
 					Cash.CFrame = Character.HumanoidRootPart.CFrame
@@ -95,7 +94,6 @@ local OriginalCFrame = Character:WaitForChild("HumanoidRootPart").CFrame
                     task.wait()
 								end)
             	end
-			end)
 		end
       
 
