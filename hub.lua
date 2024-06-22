@@ -188,8 +188,8 @@ TabEtcDebug:AddButton({
 TabEtcUI:AddButton({
 	Name = "Reiniciar Script",
 	Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkzzXD/scripts_Darkz/main/hub.lua"))()
 		s_destroy()
-       		loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkzzXD/scripts_Darkz/main/hub.lua"))()
   	end    
 })
 
