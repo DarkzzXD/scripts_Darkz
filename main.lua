@@ -1,11 +1,10 @@
-print("Iniciando Scripts do Darkz")
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Scripts do Darkz - v1", HidePremium = false, SaveConfig = false, ConfigFolder = "Config"})
 local Player = game:GetService("Players").LocalPlayer
 local Character = Player.Character
 -- Raise a Floppa 1
 local TabRAF1 = Window:MakeTab({
-	Name = "Raise a Floppa 2",
+	Name = "Raise a Floppa 1",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
