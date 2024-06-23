@@ -327,12 +327,25 @@ TabEtcPlayer:AddButton({
 })
 
 TabEtcPlayer:AddButton({
-	Name = "Copiar Posição do Personagem",
+	Name = "Copiar CFrame do Personagem",
 	Callback = function()
-        setclipboard(Character.HumanoidRootPart.Position)
+        setclipboard(Character.HumanoidRootPart.CFrame)
 	OrionLib:MakeNotification({
 		Name = "Notificação",
-		Content = "Copiado a posição do personagem com sucesso.",
+		Content = "Copiado o CFrame do Personagem com sucesso.",
+		Image = "rbxassetid://4483345998",
+		Time = 5
+	})
+  	end    
+})
+
+TabEtcPlayer:AddButton({
+	Name = "Copiar CFrame da Camera",
+	Callback = function()
+        setclipboard(workspace.CurrentCamera.CFrame)
+	OrionLib:MakeNotification({
+		Name = "Notificação",
+		Content = "Copiado o CFrame da Camera com sucesso.",
 		Image = "rbxassetid://4483345998",
 		Time = 5
 	})
