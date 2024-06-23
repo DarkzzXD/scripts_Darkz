@@ -152,6 +152,8 @@ TabRAFBackrooms:AddButton({
 	Name = "Teleportar para as Backrooms | Raise a Floppa 1",
 	Callback = function()
 		Character.HumanoidRootPart.CFrame = CFrame.new(-12800.046875, 57.98476028442383, -16092.3515625)
+Character.HumanoidRootPart.CFrame = CFrame.new(-12800.046875, 57.98476028442383, -16092.3515625)
+Character.HumanoidRootPart.CFrame = CFrame.new(-12800.046875, 57.98476028442383, -16092.3515625)
       end    
 })
 
@@ -166,6 +168,8 @@ OrionLib:MakeNotification({
 })
             for i = 0, 4 do
                       		Character.HumanoidRootPart.CFrame = CFrame.new(559.618774, -1216.10034, -79.0163116, 0.517561734, 7.25531422e-08, -0.855645895, -2.21851533e-08, 1, 7.1374096e-08, 0.855645895, -1.79578663e-08, 0.517561734)
+                      		Character.HumanoidRootPart.CFrame = CFrame.new(559.618774, -1216.10034, -79.0163116, 0.517561734, 7.25531422e-08, -0.855645895, -2.21851533e-08, 1, 7.1374096e-08, 0.855645895, -1.79578663e-08, 0.517561734)
+                      		Character.HumanoidRootPart.CFrame = CFrame.new(559.618774, -1216.10034, -79.0163116, 0.517561734, 7.25531422e-08, -0.855645895, -2.21851533e-08, 1, 7.1374096e-08, 0.855645895, -1.79578663e-08, 0.517561734)
                             workspace.CurrentCamera.CFrame = CFrame.new(554.48053, -1207.37708, -74.8082047, 0.633606553, 0.569509923, -0.523642361, 0, 0.676841855, 0.736128569, 0.773655534, -0.466415882, 0.428851366)
                             task.wait(0.5)
                             keypress("E")
@@ -174,6 +178,8 @@ OrionLib:MakeNotification({
                             wait(0.6)
             end
             Character.HumanoidRootPart.CFrame = CFrame.new(1176.09265, -1216.35034, -27.8811455, -0.18662633, 3.33773862e-08, 0.982430995, -4.38096883e-08, 1, -4.22965378e-08, -0.982430995, -5.09336431e-08, -0.18662633)
+ Character.HumanoidRootPart.CFrame = CFrame.new(1176.09265, -1216.35034, -27.8811455, -0.18662633, 3.33773862e-08, 0.982430995, -4.38096883e-08, 1, -4.22965378e-08, -0.982430995, -5.09336431e-08, -0.18662633)
+ Character.HumanoidRootPart.CFrame = CFrame.new(1176.09265, -1216.35034, -27.8811455, -0.18662633, 3.33773862e-08, 0.982430995, -4.38096883e-08, 1, -4.22965378e-08, -0.982430995, -5.09336431e-08, -0.18662633)
              workspace.CurrentCamera.CFrame = CFrame.new(554.48053, -1207.37708, -74.8082047, 0.633606553, 0.569509923, -0.523642361, 0, 0.676841855, 0.736128569, 0.773655534, -0.466415882, 0.428851366)
                             wait(0.5)
                             keypress("E")
@@ -188,6 +194,10 @@ TabSCG:AddButton({
 	Name = "Virar Sanic Amarelo | Sanic Infection",
 	Callback = function()
 		Character.HumanoidRootPart.CFrame = CFrame.new(-48.26789093017578, 104.34778594970703, 658.488525390625)
+Character.HumanoidRootPart.CFrame = CFrame.new(-48.26789093017578, 104.34778594970703, 658.488525390625)
+Character.HumanoidRootPart.CFrame = CFrame.new(-48.26789093017578, 104.34778594970703, 658.488525390625)
+Character.HumanoidRootPart.CFrame = CFrame.new(-48.26789093017578, 104.34778594970703, 658.488525390625)
+Character.HumanoidRootPart.CFrame = CFrame.new(-48.26789093017578, 104.34778594970703, 658.488525390625)
   	end    
 })
 
@@ -195,6 +205,10 @@ TabSCG:AddButton({
 	Name = "Resgatar Pontos | Sanic Infection",
 	Callback = function()
         local hrp = Character.HumanoidRootPart or Character.Torso or Character.UpperTorso
+		hrp.CFrame = CFrame.new(21.13048553466797, 91.03083801269531, 556.1837768554688)
+		hrp.CFrame = CFrame.new(21.13048553466797, 91.03083801269531, 556.1837768554688)
+		hrp.CFrame = CFrame.new(21.13048553466797, 91.03083801269531, 556.1837768554688)
+		hrp.CFrame = CFrame.new(21.13048553466797, 91.03083801269531, 556.1837768554688)
 		hrp.CFrame = CFrame.new(21.13048553466797, 91.03083801269531, 556.1837768554688)
 		keypress(Enum.KeyCode.E)
 		task.wait(4)
@@ -287,7 +301,7 @@ TabEtcPlayer:AddSlider({
 })
 
 TabEtcPlayer:AddSlider({
-	Name = "FOV Camera (Não testado)",
+	Name = "FOV Camera",
 	Min = 0,
 	Max = 120,
 	Default = 70,
