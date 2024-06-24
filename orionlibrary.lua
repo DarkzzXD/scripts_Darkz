@@ -577,6 +577,7 @@ function OrionLib:MakeWindow(WindowConfig)
 			}), {
 				SetProps(MakeElement("Image", "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId .."&width=420&height=420&format=png"), {
 					Size = UDim2.new(1, 0, 1, 0)
+					Visible = false
 				}),
 				AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://4031889928"), {
 					Size = UDim2.new(1, 0, 1, 0),
@@ -596,6 +597,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				Position = WindowConfig.HidePremium and UDim2.new(0, 50, 0, 19) or UDim2.new(0, 50, 0, 12),
 				Font = Enum.Font.PermanentMarker, --GothamBold
 				ClipsDescendants = true
+				Visible = false
 			}), "Text"),
 			AddThemeObject(SetProps(MakeElement("Label", "", 12), {
 				Size = UDim2.new(1, -60, 0, 12),
@@ -708,10 +710,11 @@ function OrionLib:MakeWindow(WindowConfig)
 			AnchorPoint = Vector2.new(0.5, 0.5),
 			Position = UDim2.new(0.5, 0, 0.4, 0),
 			Size = UDim2.new(0, 28, 0, 28),
-			ImageColor3 = Color3.fromRGB(255, 255, 255),
+			ImageColor3 = Color3.fromRGB(101, 0, 120), -- 255, 255, 255
 			ImageTransparency = 1
+			BackgroundColor3 = Color3.fromRGB(0,0,0)
 		})
-
+		local UICorner = Instance.new("UICorner", LoadSequenceLogo)
 		local LoadSequenceText = SetProps(MakeElement("Label", WindowConfig.IntroText, 14), {
 			Parent = Orion,
 			Size = UDim2.new(1, 0, 1, 0),
@@ -720,15 +723,16 @@ function OrionLib:MakeWindow(WindowConfig)
 			TextXAlignment = Enum.TextXAlignment.Center,
 			Font = Enum.Font.GothamBold,
 			TextTransparency = 1
+			BackgroundColor3 = Color3.fromRGB(0,0,0)
 		})
-
-		TweenService:Create(LoadSequenceLogo, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0, Position = UDim2.new(0.5, 0, 0.5, 0)}):Play()
+local UICorner2 = Instance.new("UICorner", LoadSequenceText)
+		TweenService:Create(LoadSequenceLogo, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0, Position = UDim2.new(0.5, 0, 0.5, 0), BackgroundTransparency = 0}):Play()
 		wait(0.8)
 		TweenService:Create(LoadSequenceLogo, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(0.5, -(LoadSequenceText.TextBounds.X/2), 0.5, 0)}):Play()
 		wait(0.3)
 		TweenService:Create(LoadSequenceText, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 0}):Play()
 		wait(2)
-		TweenService:Create(LoadSequenceText, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
+		TweenService:Create(LoadSequenceText, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1, BackgroundTransparency = 1}):Play()
 		MainWindow.Visible = true
 		LoadSequenceLogo:Destroy()
 		LoadSequenceText:Destroy()
