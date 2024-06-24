@@ -576,7 +576,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				Position = UDim2.new(0, 10, 0.5, 0)
 			}), {
 				SetProps(MakeElement("Image", "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId .."&width=420&height=420&format=png"), {
-					Size = UDim2.new(1, 0, 1, 0)
+					Size = UDim2.new(1, 0, 1, 0),
 					Visible = false
 				}),
 				AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://4031889928"), {
@@ -596,7 +596,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				Size = UDim2.new(1, -60, 0, 13),
 				Position = WindowConfig.HidePremium and UDim2.new(0, 50, 0, 19) or UDim2.new(0, 50, 0, 12),
 				Font = Enum.Font.PermanentMarker, --GothamBold
-				ClipsDescendants = true
+				ClipsDescendants = true,
 				Visible = false
 			}), "Text"),
 			AddThemeObject(SetProps(MakeElement("Label", "", 12), {
@@ -711,7 +711,7 @@ function OrionLib:MakeWindow(WindowConfig)
 			Position = UDim2.new(0.5, 0, 0.4, 0),
 			Size = UDim2.new(0, 28, 0, 28),
 			ImageColor3 = Color3.fromRGB(101, 0, 120), -- 255, 255, 255
-			ImageTransparency = 1
+			ImageTransparency = 1,
 			BackgroundColor3 = Color3.fromRGB(0,0,0)
 		})
 		local UICorner = Instance.new("UICorner", LoadSequenceLogo)
@@ -722,7 +722,7 @@ function OrionLib:MakeWindow(WindowConfig)
 			Position = UDim2.new(0.5, 19, 0.5, 0),
 			TextXAlignment = Enum.TextXAlignment.Center,
 			Font = Enum.Font.GothamBold,
-			TextTransparency = 1
+			TextTransparency = 1,
 			BackgroundColor3 = Color3.fromRGB(0,0,0)
 		})
 local UICorner2 = Instance.new("UICorner", LoadSequenceText)
