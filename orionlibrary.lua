@@ -707,6 +707,10 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	local function LoadSequence()
 		MainWindow.Visible = false
+				local test = Instance.new("Frame", Orion)
+				test.AnchorPoint = Vector2.new(0.5, 0.5)
+				test.Size = UDim2.fromScale(0.3, 0.3)
+				test.Position = UDim2.fromScale(0.4, 0.3)
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
 			Parent = Orion,
 			AnchorPoint = Vector2.new(0.5, 0.5),
