@@ -711,8 +711,9 @@ local UICorner = Instance.new("UICorner", OrionLoadingFrameTest)
 				OrionLoadingFrameTest.Name = "BG"
 OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 				OrionLoadingFrameTest.BackgroundTransparency = 1
-       OrionLoadingFrameTest.Size = UDim2.fromScale(0.113, 0.05)
-	OrionLoadingFrameTest.Position = UDim2.fromScale(0.445, 0.46)
+OrionLoadingFrameTest.AnchorPoint = Vector2.new(0.5, 0.5)
+OrionLoadingFrameTest.Size = UDim2.fromScale(0.12, 0.05)
+OrionLoadingFrameTest.Position = UDim2.fromScale(0.504, 0.5)
 
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
 			Parent = Orion,
@@ -744,9 +745,9 @@ OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 				TweenService:Create(OrionLoadingFrameTest, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
 		TweenService:Create(LoadSequenceLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
 			TweenService:Create(LoadSequenceText, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
-				TweenService:Create(blur, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Size = 24}):Play()
+				TweenService:Create(blur, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Size = 0}):Play()
 				wait(1.5)
-				
+				blur:Destroy()
 				MainWindow.Visible = true
 		LoadSequenceLogo:Destroy()
 		LoadSequenceText:Destroy()
