@@ -581,6 +581,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				}),
 				AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://4031889928"), {
 					Size = UDim2.new(1, 0, 1, 0),
+					Visible = false
 				}), "Second"),
 				MakeElement("Corner", 1)
 			}), "Divider"),
@@ -616,7 +617,8 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	local WindowTopBarLine = AddThemeObject(SetProps(MakeElement("Frame"), {
 		Size = UDim2.new(1, 0, 0, 1),
-		Position = UDim2.new(0, 0, 1, -1)
+		Position = UDim2.new(0, 0, 1, -1),
+		Visible = false
 	}), "Stroke")
 
 	local MainWindow = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 10), {
