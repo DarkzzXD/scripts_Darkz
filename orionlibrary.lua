@@ -748,7 +748,7 @@ OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(255,0,0)
 				local MWP_temp_X = MainWindow.Position.X
 				local MWP_temp_Y = MainWindow.Position.Y
 				MainWindow.Position = UDim2.new(MWP_temp_X, -1, 0)
-				TweenService:Create(LoadSequenceLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(MWP_temp_X, MWP_temp_Y}):Play()
+				TweenService:Create(LoadSequenceLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(MWP_temp_X, MWP_temp_Y)}):Play()
 		LoadSequenceLogo:Destroy()
 		LoadSequenceText:Destroy()
 	end 
