@@ -1,6 +1,6 @@
 -- THIS ORION LIBRARY IS MODIFIED, ORIGINAL ONE IS shlexware/Orion         (https://raw.githubusercontent.com/shlexware/Orion/main/source) < For the source
 function osprint(message)
-	warn("[ Scripts do Darkz | Orion Library (blob: 1) ] - " .. message)
+	warn("[ Scripts do Darkz | Orion Library (blob: 2 suffer) ] - " .. message)
 end
 
 osprint("Executando...")
@@ -750,7 +750,7 @@ OrionLoadingFrameTest.Position = UDim2.fromScale(0.504, 0.5)
 				blur:Destroy()
 				OrionLoadingFrameTest:Destroy()
 				MainWindow.Position = UDim2.fromScale(0.5, -1)
-				TweenService:Create(MainWindow, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Position = UDim2.fromScale(0.5, 0.5}):Play()
+				TweenService:Create(MainWindow, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Position = UDim2.fromScale(0.5, 0.5)}):Play()
 				MainWindow.Visible = true
 		LoadSequenceLogo:Destroy()
 		LoadSequenceText:Destroy()
