@@ -707,10 +707,10 @@ function OrionLib:MakeWindow(WindowConfig)
 				local OrionLoadingFrameTest = Instance.new("Frame", Orion)
 local UICorner = Instance.new("UICorner", OrionLoadingFrameTest)
 				OrionLoadingFrameTest.Name = "BG"
-OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(255,0,0)
+OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 				OrionLoadingFrameTest.BackgroundTransparency = 1
-        OrionLoadingFrameTest.Size = UDim2.fromScale(0.15,0.05)
-        OrionLoadingFrameTest.Position = UDim2.fromScale(0.35, 0.4)
+        OrionLoadingFrameTest.Size = UDim2.fromScale(0.15,0.1)
+        OrionLoadingFrameTest.Position = UDim2.fromScale(0.35, 0.45)
 
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
 			Parent = Orion,
@@ -742,13 +742,9 @@ OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(255,0,0)
 				TweenService:Create(OrionLoadingFrameTest, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
 		TweenService:Create(LoadSequenceLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
 			TweenService:Create(LoadSequenceText, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
-				wait(1.5)
+				wait(5)
 				
 				MainWindow.Visible = true
-				local MWP_temp_X = MainWindow.Position.X
-				local MWP_temp_Y = MainWindow.Position.Y
-				MainWindow.Position = UDim2.new(MWP_temp_X, -1, 0)
-				TweenService:Create(LoadSequenceLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Position = UDim2.new(MWP_temp_X, MWP_temp_Y}):Play()
 		LoadSequenceLogo:Destroy()
 		LoadSequenceText:Destroy()
 	end 
