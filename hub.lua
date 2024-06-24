@@ -4,9 +4,16 @@ end
 
 osprint("Executando...")
 
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character
+
 -- Global Values -- Dont change/Não mude
 _G.RaiseAFloppaAutoClickFloppa = false
 _G.canCheckAutoClickFloppa = true
+
+-- Temp Values -- Dont change/Não mude
+local FOV_temp = workspace.CurrentCamera.FieldOfView or 70
+local walkspeed_temp = Character:FindFirstChildOfClass("Humanoid").WalkSpeed or 16
 
 task.spawn(function()
 	while _G.canCheckAutoClickFloppa and task.wait() do
@@ -24,7 +31,7 @@ local Window = OrionLib:MakeWindow({Name = "Scripts do Darkz", HidePremium = fal
 function s_destroy()
 		_G.RaiseAFloppaAutoClickFloppa = false
 		_G.canCheckAutoClickFloppa = true
-      		OrionLib:Destroy()
+      	OrionLib:Destroy()
 end
 
 local TabRAF = Window:MakeTab({
@@ -35,6 +42,24 @@ local TabRAF = Window:MakeTab({
 
 local TabSC = Window:MakeTab({
 	Name = "Sanic Chase",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TabARS = Window:MakeTab({
+	Name = "Arsenal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TabAdmin = Window:MakeTab({
+	Name = "Scripts de Admin",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TabEtc = Window:MakeTab({
+	Name = "Etc / Sobre",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
@@ -51,14 +76,8 @@ local TabRAFFloppa = TabRAF:AddSection({
 	Name = "Floppa"
 })
 
-local TabEtc = Window:MakeTab({
-	Name = "Etc",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-local TabEtcAdmin = TabEtc:AddSection({
-	Name = "Admin"
+local TabEtcTop = TabEtc:AddSection({
+	Name = "Sobre o Script"
 })
 
 local TabEtcUI = TabEtc:AddSection({
@@ -68,9 +87,6 @@ local TabEtcUI = TabEtc:AddSection({
 local TabEtcPlayer = TabEtc:AddSection({
 	Name = "Personagem"
 })
-
-local Player = game:GetService("Players").LocalPlayer
-local Character = Player.Character
 
 TabRAFFloppa:AddToggle({
 	Name = "AutoClick (Meio bugado)",
@@ -251,6 +267,19 @@ Character.HumanoidRootPart.CFrame = CFrame.new(241.23609924316406, 2.93927216529
   	end    
 })
 
+TabARS:AddButton({
+	Name = "Silent Aim (Gui)",
+	Callback = function()
+        OrionLib:MakeNotification({
+	    	Name = "Notificação",
+	    	Content = "Executando Silent Aim...",
+	    	Image = "rbxassetid://4483345998",
+	    	Time = 5
+	    })
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Arsenal-Silent-Aim-12935", true))()
+  	end    
+})
+
 TabEtcUI:AddButton({
 	Name = "Reiniciar Script",
 	Callback = function()
@@ -259,8 +288,11 @@ TabEtcUI:AddButton({
   	end    
 })
 
+TabEtcTop:AddLabel("Criador do Script: _darkzlol (./Darkz) [DISCORD]")
+TabEtcTop:AddLabel("Ideias: _darkzlol & lightz_w  [DISCORD]")
+TabEtcTop:AddLabel("Library UI: Orion Library [MODIFICADO]")
 
-TabEtcAdmin:AddButton({
+TabAdmin:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
@@ -291,12 +323,15 @@ TabEtcPlayer:AddSlider({
 	Name = "Velocidade do Personagem",
 	Min = 0,
 	Max = 200,
-	Default = 16,
+	Default = walkspeed_temp,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Velocidade",
 	Callback = function(Value)
 		Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
+        Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
+        Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
+        Character:FindFirstChildOfClass("Humanoid").WalkSpeed = Value
 	end    
 })
 
@@ -304,12 +339,15 @@ TabEtcPlayer:AddSlider({
 	Name = "FOV Camera",
 	Min = 0,
 	Max = 120,
-	Default = 70,
+	Default = FOV_temp,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "FOV",
 	Callback = function(Value)
 		workspace.CurrentCamera.FieldOfView = Value
+        workspace.CurrentCamera.FieldOfView = Value
+        workspace.CurrentCamera.FieldOfView = Value
+        workspace.CurrentCamera.FieldOfView = Value
 	end    
 })
 
