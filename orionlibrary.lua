@@ -706,10 +706,11 @@ function OrionLib:MakeWindow(WindowConfig)
 		MainWindow.Visible = false
 				local OrionLoadingFrameTest = Instance.new("Frame", Orion)
 local UICorner = Instance.new("UICorner", OrionLoadingFrameTest)
+				OrionLoadingFrameTest.Name = "BG"
 OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 				OrionLoadingFrameTest.BackgroundTransparency = 1
 OrionLoadingFrameTest.Size = UDim2.fromScale(0.3, 0.2)
-OrionLoadingFrameTest.Position = UDim2.fromScale(0.5, 0.5)
+OrionLoadingFrameTest.Position = UDim2.fromScale(0.4, 0.3)
 
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
 			Parent = Orion,
