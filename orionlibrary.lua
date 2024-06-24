@@ -703,14 +703,16 @@ function OrionLib:MakeWindow(WindowConfig)
 	end)
 
 	local function LoadSequence()
+				local blur = Instance.new("BlurEffect", workspace.CurrentCamera)
+				blur.Size = 0
 		MainWindow.Visible = false
 				local OrionLoadingFrameTest = Instance.new("Frame", Orion)
 local UICorner = Instance.new("UICorner", OrionLoadingFrameTest)
 				OrionLoadingFrameTest.Name = "BG"
 OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 				OrionLoadingFrameTest.BackgroundTransparency = 1
-        OrionLoadingFrameTest.Size = UDim2.fromScale(0.15,0.1)
-        OrionLoadingFrameTest.Position = UDim2.fromScale(0.35, 0.45)
+       OrionLoadingFrameTest.Size = UDim2.fromScale(0.113, 0.05)
+	OrionLoadingFrameTest.Position = UDim2.fromScale(0.445, 0.46)
 
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
 			Parent = Orion,
@@ -730,7 +732,7 @@ OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			Font = Enum.Font.GothamBold,
 			TextTransparency = 1
 		})
-
+		TweenService:Create(blur, TweenInfo.new(1.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = 24}):Play()
 		TweenService:Create(LoadSequenceLogo, TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0, Position = UDim2.new(0.5, 0, 0.5, 0)}):Play()
 		wait(0.8)
 		TweenService:Create(OrionLoadingFrameTest, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {BackgroundTransparency = 0.5}):Play()
@@ -742,7 +744,8 @@ OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 				TweenService:Create(OrionLoadingFrameTest, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {BackgroundTransparency = 1}):Play()
 		TweenService:Create(LoadSequenceLogo, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
 			TweenService:Create(LoadSequenceText, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextTransparency = 1}):Play()
-				wait(5)
+				TweenService:Create(blur, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Size = 24}):Play()
+				wait(1.5)
 				
 				MainWindow.Visible = true
 		LoadSequenceLogo:Destroy()
