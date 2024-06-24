@@ -709,8 +709,8 @@ local UICorner = Instance.new("UICorner", OrionLoadingFrameTest)
 				OrionLoadingFrameTest.Name = "BG"
 OrionLoadingFrameTest.BackgroundColor3 = Color3.fromRGB(0,0,0)
 				OrionLoadingFrameTest.BackgroundTransparency = 1
-        OrionLoadingFrameTest.Size = UDim2.fromScale(0.2,0.1)
-        OrionLoadingFrameTest.Position = UDim2.fromScale(0.4, 0.45)
+        OrionLoadingFrameTest.Size = UDim2.fromScale(0.15,0.1)
+        OrionLoadingFrameTest.Position = UDim2.fromScale(0.35, 0.45)
 
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
 			Parent = Orion,
