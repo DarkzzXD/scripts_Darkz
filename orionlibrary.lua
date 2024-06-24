@@ -1,6 +1,6 @@
 -- THIS ORION LIBRARY IS MODIFIED, ORIGINAL ONE IS shlexware/Orion         (https://raw.githubusercontent.com/shlexware/Orion/main/source) < For the source
 function osprint(message)
-	warn("[ Scripts do Darkz | Orion Library ] - " .. message)
+	warn("[ Scripts do Darkz | Orion Library (blob: 1) ] - " .. message)
 end
 
 osprint("Executando...")
