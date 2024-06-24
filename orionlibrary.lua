@@ -707,10 +707,6 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	local function LoadSequence()
 		MainWindow.Visible = false
-				local test = Instance.new("Frame", Orion)
-				test.AnchorPoint = Vector2.new(0.5, 0.5)
-				test.Size = UDim2.fromScale(0.3, 0.3)
-				test.Position = UDim2.fromScale(0.4, 0.3)
 		local LoadSequenceLogo = SetProps(MakeElement("Image", WindowConfig.IntroIcon), {
 			Parent = Orion,
 			AnchorPoint = Vector2.new(0.5, 0.5),
@@ -723,7 +719,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		local UICorner = Instance.new("UICorner", LoadSequenceLogo)
 		local LoadSequenceText = SetProps(MakeElement("Label", WindowConfig.IntroText, 14), {
 			Parent = Orion,
-			Size = UDim2.new(1, 0, 1, 0),
+			Size = UDim2.new(0.4, 0, 0.3, 0),
 			AnchorPoint = Vector2.new(0.5, 0.5),
 			Position = UDim2.new(0.5, 19, 0.5, 0),
 			TextXAlignment = Enum.TextXAlignment.Center,
